@@ -50,7 +50,9 @@ class App extends React.Component {
     // console.log(this.state.message);
     return (
       <>
+        <h1>Welcome to the Squad!</h1>
         <AddFriendForm addFriend={this.addFriend}/>
+        <h1>List of Friends</h1>
         {this.state.friends.map(friend => <FriendList friend={friend} key={friend.id}/>)}
       </>
 
