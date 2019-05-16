@@ -22,7 +22,7 @@ export default class AddFriendForm extends Component {
        <input type="text" placeholder="name..." name="name" value={this.state.name} onChange={this.onChange}/>
        <input type="number" placeholder="age..." name="age" value={this.state.age} onChange={this.onChange}/>
        <input type="email" placeholder="email..." name="email" value={this.state.email} onChange={this.onChange}/>
-       <button onClick={(e) => this.props.addFriend(e,this.state)}>Add Friend</button>
+       <button className="md-button" onClick={(e) => this.props.addFriend(e,this.state)}>Add Friend</button>
       </form>
     )
   }
