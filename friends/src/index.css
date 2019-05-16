@@ -24,9 +24,7 @@ h1, h2, h3{
 }
 
 .title {
-  border-bottom: 2px solid grey;
   border-width: thin;
-  border-style: dashed;
   background-color: #facf5a;
   color: #1c5d76;
 }
