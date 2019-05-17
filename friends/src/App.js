@@ -49,8 +49,15 @@ class App extends React.Component {
     e.preventDefault();
     axios
       .delete(`http://localhost:5000/friends/${id}`)
-      .then(res => console.log(res));
+      .then(res => {
+        this.setState({
+          items: res.data
+        });
+        this.props.history.push("/friend-list");
+      })
+      .then(err => console.log(err));  
   };
+
 
   updateFriend = (e, id) => {
     e.preventDefault();

@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import FriendCard from './FriendCard';
 
 
 const FriendList = (props) => {
+  const friend = props.friends.find(
+    thing => `${thing.id}` === props.match.params.id
+  );
 
-  // const deleteHandler = e => {
-  //   e.preventDefault();
-  //   props.deleteFriend(props.match.params.id);
-  // };
-  //
-  // const fillFormHandler = e => {
-  //   e.preventDefault();
-  //   props.fillForm(friend);
-  // };
+  const deleteHandler = e => {
+    e.preventDefault();
+    props.deleteFriend(props.match.params.id);
+  };
+
+  const updateHandler = e => {
+    e.preventDefault();
+    props.updateFriend(props.match.params.id);
+  };
 
     return (
       <div className="friend-list">
@@ -22,10 +25,10 @@ const FriendList = (props) => {
         <h2>{props.friend.age}</h2>
         <h3>{props.friend.email}</h3>
         <div className="delete-btn">
-          <button className="md-button delete-btn">
+          <button className="md-button delete-btn" onClick={deleteHandler}>
             Delete
           </button>
-          <button className="md-button update-btn">
+          <button className="md-button update-btn" onClick={updateHandler}>
             Update
           </button>
         </div>

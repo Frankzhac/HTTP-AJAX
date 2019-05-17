@@ -16,7 +16,7 @@ export default class AddFriendForm extends Component {
   };
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <form>
        <input type="text" placeholder="name..." name="name" value={this.state.name} onChange={this.onChange}/>
