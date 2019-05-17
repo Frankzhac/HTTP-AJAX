@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class AddFriendForm extends Component {
+export default class FriendForm extends Component {
   state = {
     name: "",
     age: "",

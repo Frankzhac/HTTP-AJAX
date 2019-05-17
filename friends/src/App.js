@@ -4,7 +4,7 @@ import axios from "axios";
 import { Route } from 'react-router-dom';
 import FriendList from "./Components/FriendList";
 import Friend from "./Components/Friend";
-import AddFriendForm from "./Components/AddFriendForm";
+import FriendForm from "./Components/FriendForm";
 
 
 
@@ -55,14 +55,21 @@ class App extends React.Component {
         });
         this.props.history.push("/friend-list");
       })
-      .then(err => console.log(err));  
+      .then(err => console.log(err));
+  };
+
+  fillForm = friend => {
+    this.setState({
+      activeItem: friend
+    });
+    this.props.history.push("/friend-form");
   };
 
 
   updateFriend = (e, id) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/friends/${id}`)
+      .put(`http://localhost:5000/friends/${friend.id}`, friend)
       .then(res => console.log(res));
   };
 
@@ -72,7 +79,7 @@ class App extends React.Component {
     return (
       <>
         <h1 className="title">Welcome to the Squad!</h1>
-        <AddFriendForm addFriend={this.addFriend}/>
+        <FriendForm addFriend={this.addFriend}/>
         <h1 className="title">Squadrants List</h1>
         {this.state.friends.map(friend => <FriendList friend={friend} key={friend.id}/>)}
       </>
