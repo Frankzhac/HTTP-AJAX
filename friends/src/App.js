@@ -45,6 +45,20 @@ class App extends React.Component {
       )
   }
 
+  deleteFriend = (e, id) => {
+    e.preventDefault();
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+      .then(res => console.log(res));
+  };
+
+  updateFriend = (e, id) => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:5000/friends/${id}`)
+      .then(res => console.log(res));
+  };
+
 
   render(){
     // console.log(this.state.message);

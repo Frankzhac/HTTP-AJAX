@@ -25,19 +25,10 @@ export default class Friend extends Component {
       });
   };
 
-// const deleteHandler = e => {
-//   e.preventDefault();
-//   props.deleteFriend(props.match.params.id);
-// };
-//
-// const populateHandler = e => {
-//   e.preventDefault();
-//   props.populateForm(friend);
-// };
 
   render() {
     if (!this.state.friend) {
-      return <div>Finding friend</div>
+      return <div>Finding friend...</div>
     }
 
     return (
